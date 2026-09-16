@@ -1,7 +1,7 @@
 `ifndef SOCETLIB_COUNTER_IF_SV
 `define SOCETLIB_COUNTER_IF_SV
 
-interface socetlib_counter_if #(parameter int NBITS = 4) (input logic CLK);
+interface counter_if #(parameter int NBITS = 4) (input logic CLK);
     logic nRST;
     logic clear;
     logic count_enable;
