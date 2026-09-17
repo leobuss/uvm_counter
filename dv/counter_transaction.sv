@@ -1,5 +1,5 @@
-`ifndef SOCETLIB_COUNTER_SEQ_ITEM_SV
-`define SOCETLIB_COUNTER_SEQ_ITEM_SV
+`ifndef COUNTER_TRANSACTION_SV
+`define COUNTER_TRANSACTION_SV
 
 import uvm_pkg::*;
 `include "uvm_macros.svh"
