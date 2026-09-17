@@ -4,7 +4,7 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
 
-class counter_seq_item #(parameter int NBITS = 4) extends uvm_sequence_item;
+class counter_transaction #(parameter int NBITS = 4) extends uvm_sequence_item;
     rand logic clear;
     rand logic count_enable;
     rand logic [NBITS-1:0] overflow_val;
@@ -12,7 +12,7 @@ class counter_seq_item #(parameter int NBITS = 4) extends uvm_sequence_item;
     logic [NBITS-1:0] count_out;
     logic overflow_flag;
 
-    `uvm_object_param_utils_begin(counter_seq_item #(NBITS))
+    `uvm_object_param_utils_begin(counter_transaction #(NBITS))
         `uvm_field_int(clear, UVM_ALL_ON)
         `uvm_field_int(count_enable, UVM_ALL_ON)
         `uvm_field_int(overflow_val, UVM_ALL_ON)
@@ -20,7 +20,7 @@ class counter_seq_item #(parameter int NBITS = 4) extends uvm_sequence_item;
         `uvm_field_int(overflow_flag, UVM_ALL_ON)
     `uvm_object_utils_end
 
-    function new(string name = "counter_seq_item");
+    function new(string name = "counter_transaction");
         super.new(name);
     endfunction
 
@@ -34,3 +34,4 @@ class counter_seq_item #(parameter int NBITS = 4) extends uvm_sequence_item;
         overflow_val > 0;
     }
 endclass
+'endif
