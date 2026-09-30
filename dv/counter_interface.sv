@@ -1,3 +1,5 @@
+// chnaged the file to interfasce instead of if
+
 `ifndef SOCETLIB_COUNTER_IF_SV
 `define SOCETLIB_COUNTER_IF_SV
 
