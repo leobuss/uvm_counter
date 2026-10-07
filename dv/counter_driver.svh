@@ -1,8 +1,8 @@
 // driber
 //
 
-`ifndef COUNTER_DRIVER_SV
-`define COUNTER_DRIVER_SV
+`ifndef COUNTER_DRIVER_SVH
+`define COUNTER_DRIVER_SVH
 
 import uvm_pkg::*;
 `include "uvm_macros.svh"

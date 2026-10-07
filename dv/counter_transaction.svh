@@ -1,5 +1,5 @@
-`ifndef COUNTER_TRANSACTION_SV
-`define COUNTER_TRANSACTION_SV
+`ifndef COUNTER_TRANSACTION_SVH
+`define COUNTER_TRANSACTION_SVH
 
 import uvm_pkg::*;
 `include "uvm_macros.svh"

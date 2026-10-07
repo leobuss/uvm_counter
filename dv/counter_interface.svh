@@ -1,7 +1,7 @@
 // chnaged the file to interfasce instead of if
 
-`ifndef SOCETLIB_COUNTER_IF_SV
-`define SOCETLIB_COUNTER_IF_SV
+`ifndef SOCETLIB_COUNTER_IF_SVH
+`define SOCETLIB_COUNTER_IF_SVH
 
 interface counter_if #(parameter int NBITS = 4) (input logic CLK);
     logic nRST;

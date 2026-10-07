@@ -4,25 +4,12 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
 
-class counter_sequencer extends uvm_sequence #(counter_transaction);
-    `uvm_object_utils(count_n_times_seq)
-  
-    function new(string name = "count_n_times_seq");
-        super.new(name);
-    endfunction
+class counter_sequencer #(parameter int NBITS = 4) extends uvm_sequencer #(counter_transaction #(NBITS));
+    `uvm_component_param_utils(counter_sequencer #(NBITS))
 
-    virtual task body();
-        repeat(num_counts) begin
-            req = counter_transaction::type_id::create("req");
-            start_item(req);
-          
-            if (!req.randomize() with { clear == 0; count_enable == 1; }) begin
-                `uvm_error("SEQ", "Randomization failed")
-            end
-            
-            finish_item(req);
-        end
-    endtask
+    function new(string name, uvm_component parent);
+        super.new(name, parent);
+    endfunction
 endclass
 
 `endif

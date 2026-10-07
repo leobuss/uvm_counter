@@ -1,5 +1,5 @@
-`ifndef COUNTER_AGENT_SV
-`define COUNTER_AGENT_SV
+`ifndef COUNTER_AGENT_SVH
+`define COUNTER_AGENT_SVH
 
 import uvm_pkg::*;
 `include "uvm_macros.svh"

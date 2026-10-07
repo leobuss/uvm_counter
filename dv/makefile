@@ -3,7 +3,7 @@ VSIM = vsim
 VLIB = vlib
 VMAP = vmap
 
-INC = +incdir+
+INC = +incdir+.
 TOP = tb_top
 LIB ?= work
 
@@ -21,10 +21,10 @@ compile:
 # List of files for full testbench compile
 FILES = \
 	socetlib_counter.svh \
-	counter_if.svh \
+	counter_interface.svh \
 	counter_transaction.svh \
 	counter_sequencer.svh \
-	counter_sequencer.svh \
+	counter_sequence.svh \
 	counter_driver.svh \
 	counter_monitor.svh \
 	counter_agent.svh \
