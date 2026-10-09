@@ -19,14 +19,14 @@ class counter_driver #(parameter NBITS = 4) extends uvm_driver #(counter_transac
 	virtual function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
 
-		if (!uvm_config_db#(virtual socetlib_counter_if #(NBITS))::get(this, "", "vif", vif)) begin
+		if (!uvm_config_db#(virtual counter_interface #(NBITS))::get(this, "", "vif", vif)) begin
             		`uvm_fatal("Driver", "No interface found");
         	end	
 	endfunction
 
 
 	virtual task run_phase(uvm_phase phase);
-		transaction req;
+		counter_transaction #(NBITS) req;
 		vif.cb_drv.nRST <= 1'b1;
 		vif.cb_drv.clear <= 1'b0;
 		vif.cb_drv.count_enable <= 1'b0;

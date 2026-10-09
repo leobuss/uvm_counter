@@ -10,7 +10,7 @@ class counter_monitor #(parameter NBITS = 4) extends uvm_monitor;
     `uvm_component_param_utils(counter_monitor #(NBITS))
 
     virtual counter_if #(NBITS) vif;
-    uvm_analysis_port #(counter_seq_item #(NBITS)) ap;
+    uvm_analysis_port #(counter_transaction #(NBITS)) ap;
 
     function new(string name = "counter_monitor", uvm_component parent = null);
         super.new(name, parent);
@@ -26,12 +26,12 @@ class counter_monitor #(parameter NBITS = 4) extends uvm_monitor;
     endfunction
 
     virtual task run_phase(uvm_phase phase);
-        counter_seq_item #(NBITS) trans;
+        counter_transaction #(NBITS) trans;
 
         forever begin
             @(vif.cb_mon);
           
-            trans = counter_seq_item#(NBITS)::type_id::create("trans");
+            trans = counter_transaction #(NBITS)::type_id::create("trans");
             trans.clear = vif.cb_mon.clear;
             trans.count_enable = vif.cb_mon.count_enable;
             trans.overflow_val = vif.cb_mon.overflow_val;
