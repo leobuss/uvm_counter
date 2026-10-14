@@ -1,9 +1,9 @@
 // chnaged the file to interfasce instead of if
 
-`ifndef SOCETLIB_COUNTER_IF_SVH
-`define SOCETLIB_COUNTER_IF_SVH
+`ifndef SOCETLIB_COUNTER_INTERFACE_SVH
+`define SOCETLIB_COUNTER_INTERFACE_SVH
 
-interface counter_if #(parameter int NBITS = 4) (input logic CLK);
+interface counter_interface #(parameter int NBITS = 4) (input logic CLK);
     logic nRST;
     logic clear;
     logic count_enable;

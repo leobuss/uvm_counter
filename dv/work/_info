@@ -1,0 +1,167 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.4 2021.10, Oct 13 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/asicfab/a/buss14/uvm_counter/dv
+T_opt
+!s11d socetlib_counter_sv_unit /home/asicfab/a/buss14/uvm_counter/dv/work 1 counter_interface 1 /home/asicfab/a/buss14/uvm_counter/dv/work 
+!s110 1791935586
+V6WSLmeOmD7FK:aIF>A1Ym1
+04 6 4 work tb_top fast 0
+=1-1866dab9deaf-6acec462-ee5d-6d564
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.4;73
+Ycounter_interface
+Z2 !s105 socetlib_counter_sv_unit
+Z3 DXx4 work 24 socetlib_counter_sv_unit 0 22 JEjF7kmFQ0XhCo6gFbZRM0
+Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z5 !s110 1791935582
+!i10b 1
+!s100 ?lM0hbgmAA`9Ha=<1FU_V2
+IZSZPKBPV9D@d[PM]^1_B52
+S1
+R0
+w1791934623
+Z6 8counter_interface.svh
+Z7 Fcounter_interface.svh
+!i122 0
+L0 6 0
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2021.4;73
+r1
+!s85 0
+31
+Z10 !s108 1791935582.000000
+Z11 !s107 /package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|tb_top.sv|counter_test.svh|counter_env.svh|counter_scoreboard.svh|counter_agent.svh|counter_monitor.svh|counter_driver.svh|counter_sequence.svh|counter_sequencer.svh|counter_transaction.svh|counter_interface.svh|../rtl/socetlib_counter.sv|
+Z12 !s90 -work|work|-sv|-mfcu|+incdir+.|../rtl/socetlib_counter.sv|counter_interface.svh|counter_transaction.svh|counter_sequencer.svh|counter_sequence.svh|counter_driver.svh|counter_monitor.svh|counter_agent.svh|counter_scoreboard.svh|counter_env.svh|counter_test.svh|tb_top.sv|
+!i113 0
+Z13 o-work work -sv -mfcu -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 !s92 -work work -sv -mfcu +incdir+. -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vsocetlib_counter
+R2
+R3
+R4
+R5
+!i10b 1
+!s100 ?JGW]Mh?8FPkdd;P^CAGz1
+IEJ>eaCVS>PH=?S7d>3Ei^1
+S1
+R0
+w1790810841
+Z15 8../rtl/socetlib_counter.sv
+Z16 F../rtl/socetlib_counter.sv
+!i122 0
+L0 7 53
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R1
+Xsocetlib_counter_sv_unit
+!s115 counter_interface
+R4
+Z17 DXx6 mtiUvm 7 uvm_pkg 0 22 8V[`8]Q0W57le7Z>zYaAj1
+R5
+VJEjF7kmFQ0XhCo6gFbZRM0
+r1
+!s85 0
+!i10b 1
+!s100 he1h=P[f:F;z9YzS?NAAo3
+IJEjF7kmFQ0XhCo6gFbZRM0
+!i103 1
+S1
+R0
+w1791935431
+R15
+R16
+R6
+R7
+8counter_transaction.svh
+Fcounter_transaction.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+F/package/eda/mg/questa2021.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+8counter_sequencer.svh
+Fcounter_sequencer.svh
+8counter_sequence.svh
+Fcounter_sequence.svh
+8counter_driver.svh
+Fcounter_driver.svh
+8counter_monitor.svh
+Fcounter_monitor.svh
+8counter_agent.svh
+Fcounter_agent.svh
+8counter_scoreboard.svh
+Fcounter_scoreboard.svh
+8counter_env.svh
+Fcounter_env.svh
+8counter_test.svh
+Fcounter_test.svh
+Z18 8tb_top.sv
+Z19 Ftb_top.sv
+!i122 0
+L0 4 0
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R1
+vtb_top
+R4
+R17
+R3
+R5
+R8
+r1
+!s85 0
+!i10b 1
+!s100 <9L9liF:]MnGLGXnIcXLf2
+IA:;MEHlZLJ22Hb^?HR0[62
+R2
+S1
+R0
+w1791934947
+R18
+R19
+!i122 0
+L0 6 44
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R1

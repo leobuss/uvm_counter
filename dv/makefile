@@ -16,11 +16,11 @@ compile:
 	@if [ ! -d "$(LIB)" ]; then \
 		$(VLIB) $(LIB); \
 	fi
-	$(VLOG) -work $(LIB) -sv $(INC) $(FILE)
+	$(VLOG) -work $(LIB) -sv -mfcu $(INC) $(FILE)
 
 # List of files for full testbench compile
 FILES = \
-	socetlib_counter.svh \
+	../rtl/socetlib_counter.sv \
 	counter_interface.svh \
 	counter_transaction.svh \
 	counter_sequencer.svh \
@@ -39,7 +39,7 @@ compile_all:
 	@if [ ! -d "$(LIB)" ]; then \
 		$(VLIB) $(LIB); \
 	fi
-	$(VLOG) -work $(LIB) -sv $(INC) $(FILES)
+	$(VLOG) -work $(LIB) -sv -mfcu $(INC) $(FILES)
 
 # usage: make run LIB=work_j
 run:

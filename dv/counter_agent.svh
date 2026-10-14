@@ -4,10 +4,10 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
 
-`include "counter_transaction.sv"
-`include "counter_sequencer.sv"
-`include "counter_driver.sv"
-`include "counter_monitor.sv"
+`include "counter_transaction.svh"
+`include "counter_sequencer.svh"
+`include "counter_driver.svh"
+`include "counter_monitor.svh"
 
 class counter_agent #(parameter int NBITS = 4) extends uvm_agent;
   `uvm_component_param_utils(counter_agent#(NBITS))

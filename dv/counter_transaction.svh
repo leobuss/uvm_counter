@@ -11,6 +11,7 @@ class counter_transaction #(parameter int NBITS = 4) extends uvm_sequence_item;
 
     logic [NBITS-1:0] count_out;
     logic overflow_flag;
+    logic nRST;
 
     `uvm_object_param_utils_begin(counter_transaction #(NBITS))
         `uvm_field_int(clear, UVM_ALL_ON)
@@ -34,4 +35,4 @@ class counter_transaction #(parameter int NBITS = 4) extends uvm_sequence_item;
         overflow_val > 0;
     }
 endclass
-'endif
+`endif

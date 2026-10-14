@@ -10,7 +10,7 @@ import uvm_pkg::*;
 class counter_driver #(parameter NBITS = 4) extends uvm_driver #(counter_transaction #(NBITS));
 	`uvm_component_param_utils(counter_driver #(NBITS))
 	
-	virtual counter_if #(NBITS)vif;
+	virtual counter_interface #(NBITS)vif;
 
 	function new (string name = "counter_driver", uvm_component parent);
 		super.new(name, parent);
@@ -27,7 +27,7 @@ class counter_driver #(parameter NBITS = 4) extends uvm_driver #(counter_transac
 
 	virtual task run_phase(uvm_phase phase);
 		counter_transaction #(NBITS) req;
-		vif.cb_drv.nRST <= 1'b1;
+		// vif.cb_drv.nRST <= 1'b1;
 		vif.cb_drv.clear <= 1'b0;
 		vif.cb_drv.count_enable <= 1'b0;
 		vif.cb_drv.overflow_val <= '0;
