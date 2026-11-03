@@ -25,14 +25,18 @@ class counter_transaction #(parameter int NBITS = 4) extends uvm_sequence_item;
         super.new(name);
     endfunction
 
-    constraint clear_c 
+    constraint clear 
     {
         clear dist {1 := 5, 0 := 95}; // high only 5% 
     }
 
-    constraint overflow_val_c
+    constraint overflow_val
     {
         overflow_val > 0;
+    }
+    constraint count_enable
+    {
+       count_enable dist {1'b1 := 80, 1'b0 := 20};
     }
 endclass
 `endif

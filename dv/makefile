@@ -25,6 +25,7 @@ FILES = \
 	counter_transaction.svh \
 	counter_sequencer.svh \
 	counter_sequence.svh \
+	counter_directed_sequence.svh \
 	counter_driver.svh \
 	counter_monitor.svh \
 	counter_agent.svh \

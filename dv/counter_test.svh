@@ -8,6 +8,8 @@ class counter_test extends uvm_test;
     `uvm_component_utils(counter_test)
 
     counter_env #(4) env;
+    virtual counter_interface #(4) vif;
+    
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
@@ -19,18 +21,51 @@ class counter_test extends uvm_test;
     endfunction
 
     task run_phase(uvm_phase phase);
-        counter_sequence #(4) seq;
-        seq = counter_sequence#(4)::type_id::create("seq");
+        counter_sequence #(4) rand_seq;
+        counter_directed_sequence #(4) dir_seq;
+       
 
         phase.raise_objection(this);
+       `uvm_info("Test", "random tests", UVM_LOW)
+       repeat(50) begin
+	  rand_seq = counter_sequence#(4)::type_id::create("rand_seq");
+	  if (!rand_seq.randomize()) begin
+                `uvm_fatal("Test", "Sequence randomization failed")
+          end
+	  rand_seq.start(env.agent.sqr);
+	  repeat(10) @(posedge vif.CLK);
+       end
 
-        if (!seq.randomize()) begin
-            `uvm_error("TEST", "Sequence randomization failed")
+       `uvm_info("Test", "directed tests", UVM_LOW)
+       dir_seq = counter_directed_sequence#(4)::type_id::create("dir_seq");
+       dir_seq.start(env.agent.sqr);
+       repeat(3) @(posedge vif.CLK);
+
+        // directed test leaves count at 5
+        if (vif.count_out !== 4'd5) begin
+            `uvm_error("reset", "count wrong before asynchronous reset")
         end
 
-        seq.start(env.agent.sqr);
+        // reset between rising and falling edge
+        @(negedge vif.CLK);
+        #1ns;
+        vif.nRST = 1'b0;
 
-        phase.drop_objection(this);
+        // check
+        #1ns;
+        if (vif.count_out !== '0 || vif.overflow_flag !== 1'b0) begin
+            `uvm_error("reset", "Asynchronous reset failed")
+        end
+        repeat(2) @(posedge vif.CLK);
+
+        @(negedge vif.CLK);
+        #1ns;
+        vif.nRST = 1'b1;
+
+        repeat(3) @(posedge vif.CLK);
+
+       phase.drop_objection(this);
+       
     endtask
 endclass
 `endif
