@@ -18,6 +18,10 @@ class counter_test extends uvm_test;
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         env = counter_env#(4)::type_id::create("env", this);
+
+       if (!uvm_config_db#(virtual counter_interface #(4))::get(this, "", "vif", vif)) begin
+         `uvm_fatal("Test", "Virtual interface not found")
+     end
     endfunction
 
     task run_phase(uvm_phase phase);
