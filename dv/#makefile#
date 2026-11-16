@@ -1,0 +1,63 @@
+lsVLOG = vlog
+VSIM = vsim
+VLIB = vlib
+VMAP = vmap
+
+INC = +incdir+.
+TOP = tb_top
+LIB ?= work
+COV_FLAGS ?=
+
+# usage: make compile FILE=filename.sv LIB=work_j
+compile:
+	@if [ -z "$(FILE)" ]; then \
+		echo "Usage: make compile FILE=<file> [LIB=<library>]"; \
+		exit 1; \
+	fi
+	@if [ ! -d "$(LIB)" ]; then \
+		$(VLIB) $(LIB); \
+	fi
+	$(VLOG) -work $(LIB) -sv -mfcu $(INC) $(COV_FLAGS) $(FILE)
+
+# List of files for full testbench compile
+FILES = \
+	../rtl/socetlib_counter.sv \
+	counter_interface.svh \
+	counter_transaction.svh \
+	counter_sequencer.svh \
+	counter_sequence.svh \
+	counter_directed_sequence.svh \
+	counter_driver.svh \
+	counter_monitor.svh \
+	counter_agent.svh \
+	counter_scoreboard.svh \
+	counter_env.svh \
+	counter_test.svh \
+	tb_top.sv
+
+# Full compile
+# usage: make compile_all LIB=work_j
+compile_all:
+	@if [ ! -d "$(LIB)" ]; then \
+		$(VLIB) $(LIB); \
+	fi
+	$(VLOG) -work $(LIB) -sv -mfcu $(INC) $(FILES)
+
+# usage: make run LIB=work_j
+run:
+	@rm -rf $(LIB)
+	$(MAKE) compile_all LIB=$(LIB)
+	$(VSIM) -c $(LIB).$(TOP) -do "run -all; quit"
+
+# usage: make gui LIB=work_j
+gui:
+	@rm -rf $(LIB)
+	$(MAKE) compile_all LIB=$(LIB)
+	$(VSIM) -voptargs="+acc" $(LIB).$(TOP) -do "add wave -r /*; run -all"
+
+coverage:
+	@rm -rf $(LIB) counter.ucdb
+	$(MAKE) compile_all LIB=$(LIB) COV_FLAGS=+cover=bcesft
+	$(VSIM) -c -coverage $(LIB).$(TOP) -do "coverage save -onexit counter.ucdb; run -all; quit -f"
+	vcover report -details -codeAll -instance=/tb_top/dut counter.ucdb > code_coverage.txt
+	vcover report -details -cvg counter.ucdb > functional_coverage.txt

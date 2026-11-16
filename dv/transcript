@@ -1,5 +1,5 @@
-# vsim -c work.tb_top -do "run -all; quit" 
-# Start time: 21:09:28 on Nov 02,2026
+# vsim -c -coverage work.tb_top -do "coverage save -onexit counter.ucdb; run -all; quit -f" 
+# Start time: 16:25:12 on Nov 16,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim-64
 # //  Version 2021.4 linux_x86_64 Oct 13 2021
@@ -22,7 +22,8 @@
 # Loading work.tb_top(fast)
 # Loading work.counter_interface(fast)
 # Loading /package/eda/mg/questa2021.4/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
-# run -all
+# coverage save -onexit counter.ucdb
+#  run -all
 # ----------------------------------------------------------------
 # UVM-1.1d
 # (C) 2007-2013 Mentor Graphics Corporation
@@ -47,16 +48,16 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test counter_test...
 # UVM_INFO counter_test.svh(33) @ 0: uvm_test_top [Test] random tests
-# UVM_INFO counter_test.svh(43) @ 3069500: uvm_test_top [Test] directed tests
-# UVM_INFO counter_directed_sequence.svh(32) @ 3069500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Normal counting
-# UVM_INFO counter_directed_sequence.svh(37) @ 3074500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Count disabled
-# UVM_INFO counter_directed_sequence.svh(41) @ 3077500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Clear
-# UVM_INFO counter_directed_sequence.svh(46) @ 3079500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Clear priority
-# UVM_INFO counter_directed_sequence.svh(52) @ 3084500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Overflow
-# UVM_INFO counter_directed_sequence.svh(60) @ 3094500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] dynamic overflow val
-# UVM_INFO counter_directed_sequence.svh(68) @ 3102500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Minimum threshold
-# UVM_INFO counter_directed_sequence.svh(74) @ 3108500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Maximum threshold
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 3141500: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO counter_test.svh(43) @ 6412500: uvm_test_top [Test] directed tests
+# UVM_INFO counter_directed_sequence.svh(32) @ 6412500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Normal counting
+# UVM_INFO counter_directed_sequence.svh(37) @ 6417500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Count disabled
+# UVM_INFO counter_directed_sequence.svh(41) @ 6420500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Clear
+# UVM_INFO counter_directed_sequence.svh(46) @ 6422500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Clear priority
+# UVM_INFO counter_directed_sequence.svh(52) @ 6427500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Overflow
+# UVM_INFO counter_directed_sequence.svh(60) @ 6437500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] dynamic overflow val
+# UVM_INFO counter_directed_sequence.svh(68) @ 6445500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Minimum threshold
+# UVM_INFO counter_directed_sequence.svh(74) @ 6451500: uvm_test_top.env.agent.sqr@@dir_seq [Directed Test] Maximum threshold
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 6484500: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
@@ -72,6 +73,7 @@
 # [TEST_DONE]     1
 # [Test]     2
 # ** Note: $finish    : /package/eda/mg/questa2021.4/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 31415 ns  Iteration: 55  Instance: /tb_top
-# End time: 21:09:33 on Nov 02,2026, Elapsed time: 0:00:05
+#    Time: 64845 ns  Iteration: 55  Instance: /tb_top
+# Saving coverage database on exit...
+# End time: 16:25:16 on Nov 16,2026, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 0

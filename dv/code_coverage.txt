@@ -1,0 +1,115 @@
+QuestaSim-64 vcover 2021.4 Coverage Utility 2021.10 Oct 13 2021
+Start time: 16:25:16 on Nov 16,2026
+vcover report -details -codeAll -instance=/tb_top/dut counter.ucdb 
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /tb_top/dut
+=== Design Unit: work.socetlib_counter
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         9         9         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tb_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/socetlib_counter.sv
+------------------------------------IF Branch------------------------------------
+    28                                      5223     Count coming in to IF
+    28              1                          5     
+    32              1                       5218     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    42                                      6465     Count coming in to IF
+    42              1                        494     
+    44              1                       5045     
+    49              1                        926     
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    45                                      5045     Count coming in to IF
+    45              1                        702     
+    47              1                       4343     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                      6465     Count coming in to IF
+    53              1                        883     
+    55              1                       5582     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         2         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /tb_top/dut --
+
+  File ../rtl/socetlib_counter.sv
+----------------Focused Condition View-------------------
+Line       45 Item    1  ((count + 1) > overflow_val)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       53 Item    1  (n_count == overflow_val)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      14        14         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/socetlib_counter.sv
+    27              1                       5223     
+    29              1                          5     
+    30              1                          5     
+    33              1                       5218     
+    34              1                       5218     
+    38              1                       6465     
+    39              1                       6465     
+    40              1                       6465     
+    43              1                        494     
+    46              1                        702     
+    48              1                       4343     
+    50              1                        926     
+    54              1                        883     
+    56              1                       5582     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         30        30         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_top/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         15 
+Toggled Node Count   =         15 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (30 of 30 bins)
+
+
+Total Coverage By Instance (filtered view): 100.00%
+
+End time: 16:25:16 on Nov 16,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

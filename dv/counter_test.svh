@@ -31,7 +31,7 @@ class counter_test extends uvm_test;
 
         phase.raise_objection(this);
        `uvm_info("Test", "random tests", UVM_LOW)
-       repeat(50) begin
+       repeat(100) begin
 	  rand_seq = counter_sequence#(4)::type_id::create("rand_seq");
 	  if (!rand_seq.randomize()) begin
                 `uvm_fatal("Test", "Sequence randomization failed")

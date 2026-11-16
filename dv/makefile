@@ -6,6 +6,7 @@ VMAP = vmap
 INC = +incdir+.
 TOP = tb_top
 LIB ?= work
+COV_FLAGS ?=
 
 # usage: make compile FILE=filename.sv LIB=work_j
 compile:
@@ -16,7 +17,7 @@ compile:
 	@if [ ! -d "$(LIB)" ]; then \
 		$(VLIB) $(LIB); \
 	fi
-	$(VLOG) -work $(LIB) -sv -mfcu $(INC) $(FILE)
+	$(VLOG) -work $(LIB) -sv -mfcu $(INC) $(COV_FLAGS) $(FILE)
 
 # List of files for full testbench compile
 FILES = \
@@ -40,7 +41,7 @@ compile_all:
 	@if [ ! -d "$(LIB)" ]; then \
 		$(VLIB) $(LIB); \
 	fi
-	$(VLOG) -work $(LIB) -sv -mfcu $(INC) $(FILES)
+	$(VLOG) -work $(LIB) -sv -mfcu $(INC) $(COV_FLAGS) $(FILES)
 
 # usage: make run LIB=work_j
 run:
@@ -53,3 +54,10 @@ gui:
 	@rm -rf $(LIB)
 	$(MAKE) compile_all LIB=$(LIB)
 	$(VSIM) -voptargs="+acc" $(LIB).$(TOP) -do "add wave -r /*; run -all"
+
+coverage:
+	@rm -rf $(LIB) counter.ucdb
+	$(MAKE) compile_all LIB=$(LIB) COV_FLAGS=+cover=bcesft
+	$(VSIM) -c -coverage $(LIB).$(TOP) -do "coverage save -onexit counter.ucdb; run -all; quit -f"
+	vcover report -details -codeAll -instance=/tb_top/dut counter.ucdb > code_coverage.txt
+	vcover report -details -cvg counter.ucdb > functional_coverage.txt
